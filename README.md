@@ -127,7 +127,7 @@ We need to re-build the main project.
     Press [c] again to configure then press [g] to generate.
     In the terminal run the following commands:
     ```
-    ~/../FSLAM-phd_code$ make -j4
+    ~/../HSLAM$ make -j4
     ```
 
 # 5. Run Examples
