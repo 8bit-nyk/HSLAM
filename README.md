@@ -39,13 +39,13 @@ We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) libra
 
 1. Clone the repository:
 ```
-$ git clone -b phd_code https://github.com/AUBVRL/FSLAM.git
+$ git clone https://github.com/8bit-nyk/HSLAM.git
 ```
 Note: We are cloning a specific branch with **-b** argument
 
 2. Navigate to project repository:
 ```
-$ cd <your_working_directory>/FSLAM-phd_code
+$ cd <your_working_directory>/HSLAM
 ```
 
 3. We provide a script `build.sh` to download and install the specific versions of the dependency libraries needed. Execute:
@@ -59,7 +59,7 @@ After the script finishes we will have to modify and build some thirdparty libra
 4. Building and configuring third party libraries:
     Open terminal in project directory and navigate to g2o folder located in Thirdparty directory:
     ```
-    ~/FSLAM-phd_code$ cd /Thirdparty/g2o
+    ~/HSLAM$ cd /Thirdparty/g2o
     ```
     Create build directory and navigate to it:
     ```
@@ -105,11 +105,11 @@ We need to re-build the main project.
 
     In terminal navigate to FSLAM main project diirectory
     ```
-    $ cd ~/<your_directory>/FSLAM-phd_code
+    $ cd ~/<your_directory>/HSLAM
     ```
     Run the following command
     ```
-    ~/../FSLAM-phd_code$ ccmake .
+    ~/../HSLAM$ ccmake .
     ```
     This will open the CMake GUI.
 
