@@ -81,7 +81,7 @@ After the script finishes we will have to modify and build some thirdparty libra
     ~/Thirdparty/g2o/build$ ccmake ..
     ```
     This will open the CMake GUI in the terminal as per the screenshot below:
-    [TODO:insert screenshot]
+    ![hslam-cmake-tutorial](https://github.com/8bit-nyk/HSLAM/assets/49674476/7833e0cf-baf9-4640-96a2-3f02dc7474e5)
 
     
     Press [c] to configure and [t] to toggle advanced mode ON.
