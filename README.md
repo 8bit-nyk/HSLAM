@@ -151,9 +151,11 @@ We need to re-build the main project.
   cd ~/HSLAM/build/
   ```
 
-3.  Run the following command:
+3.  Run the following commands:
    
   Note that the following commands assume you downloaded **sequence_30**  you will need to adjust the files paths according to your local setup
+
+If there are NO photmetric calibration parameters available run:
 
   ```
  ./bin/HSLAM \
@@ -163,6 +165,17 @@ We need to re-build the main project.
  -mode=1 
 
   ```
+
+If photometric calinration is avaliable run:
+```
+  ./bin/HSLAM \
+ -files=PATH/TO/DATASET/sequence_30/images.zip \
+ -calib=PATH/TO/DATASET/sequence_30/camera.txt \
+ -vocabPath=/PATH/TO/HSLAM/misc/orbvoc.dbow3 \
+ -mode=0 \
+ -gamma=/home/nykvm/datasets/sequence_30/pcalib.txt \
+ -vignette=/home/nykvm/datasets/sequence_30/vignette.png \
+```
 
   You should get an output similair to screenshot below showing the SLAM process:
   ![hslam-output-screenshot](https://github.com/8bit-nyk/HSLAM/assets/49674476/ab3a1c94-8f38-41da-855d-c25566f720c4)
