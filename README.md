@@ -1,12 +1,23 @@
 # HSLAM (Hybrid-SLAM)
 
 This branch holds clear instructions on how to resolve all dependency issues and build & run Hybrid-SLAM on datasets.
-For an implementation of HSLAM with live camera feed (utilizing ROS) refer to repository flsam_ros_docker.
-
+For an implementation of HSLAM with live camera feed (utilizing ROS) refer to this repository [HSLAM_Docker](https://github.com/8bit-nyk/hslam_ros_docker) .
 
 ### Related Publications:
+[A Unified Hybrid Formulation for Visual SLAM](https://scholarworks.aub.edu.lb/bitstream/handle/10938/22253/YounesGeorges_2021.pdf?sequence=5) (Doctoral dissertation), Younes, G. (2021).
 
-[HSLAM]Younes, G. (2021). A Unified Hybrid Formulation for Visual SLAM (Doctoral dissertation). **[PDF] (https://scholarworks.aub.edu.lb/bitstream/handle/10938/22253/YounesGeorges_2021.pdf?sequence=5)**
+[H-SLAM: Hybrid Direct-Indirect Visual SLAM](https://arxiv.org/pdf/2306.07363)  Younes, G. et al (2023).
+
+Please cite the paper if used in an academic context.
+```
+@article{younes2023h,
+  title={H-SLAM: Hybrid Direct-Indirect Visual SLAM},
+  author={Younes, Georges and Khalil, Douaa and Zelek, John and Asmar, Daniel},
+  journal={arXiv preprint arXiv:2306.07363},
+  year={2023}
+}
+
+```
 
 # 1. License
 
