@@ -27,8 +27,9 @@ HSLAM is released under [GPLv3 license]
 We have tested the library in **Ubuntu 18.04** and **20.04**, but it should be easy to compile in other platforms. A powerful computer (e.g. i7) will ensure real-time performance and provide more stable and accurate results.
 
 # 3. Dependencies:
-The project is dependent on specific versions of the following libraries. 
-The correct versions will be installed when building project with the provided `build.sh` script. (See Section 4 for more details)
+The project is dependent on specific versions of the following libraries:
+
+**The correct versions will be installed when building project with the provided `build.sh` script. (See Section 4 for more details)**
 
 ## C++11 or C++0x Compiler
 We use the new thread and chrono functionalities of C++11.
@@ -87,7 +88,7 @@ After the script finishes we will have to modify and build some thirdparty libra
     Press [c] to configure and [t] to toggle advanced mode ON.
 
     Once in advanced mode:
-        Locate the five parameters with **CMAKE_CXX_FLAGS** and **append** the following string to all **CMAKE_CXX_FLAGS** parameters:
+        Locate the five parameters with **CMAKE_CXX_FLAGS** and _**APPEND**_ the following string to all **CMAKE_CXX_FLAGS** parameters:
         
         -march=native -std=gnu++0x
     
@@ -96,7 +97,7 @@ After the script finishes we will have to modify and build some thirdparty libra
      ```
     - BUILD_WITH_MARCH_NATIVE=ON
     - CMAKE_BUILD_TYPE : RelwithDebInfo
-    - CMAKE_INSTALL_PREFIX: <your_directory>/FSLAM-phd_code/Thirdparty/CompiledLibs
+    - CMAKE_INSTALL_PREFIX: <your_directory>/HSLAM/Thirdparty/CompiledLibs
     - CMAKE_RELWITHDEBINFO_POSTFIX : ""
     - CMAKE_MINSIZEREL_POSTFIX : ""
     - G2O_BUILD_APPS : OFF
@@ -114,7 +115,7 @@ We need to re-build the main project.
 
 5. Configuring and re-building main project:
 
-    In terminal navigate to FSLAM main project diirectory
+    In terminal navigate to HSLAM main project diirectory
     ```
     $ cd ~/<your_directory>/HSLAM
     ```
@@ -142,6 +143,29 @@ We need to re-build the main project.
     ```
 
 # 5. Run Examples
+1. Download one of the sequences from the [Monocular Visual ODometry Dataset provided by TUM](https://cvg.cit.tum.de/data/datasets/mono-dataset)
+
+
+2. Navigate to the build directory of the project
+  ```
+  cd ~/HSLAM/build/
+  ```
+
+3.  Run the following command:
+   
+  Note that the following commands assume you downloaded **sequence_30**  you will need to adjust the files paths according to your local setup
+
+  ```
+ ./bin/HSLAM \
+ -files=PATH/TO/DATASET/sequence_30/images.zip \
+ -calib=PATH/TO/DATASET/sequence_30/camera.txt \
+ -vocabPath=PATH/TO/HSLAM/misc/orbvoc.dbow3 \
+ -mode=1 
+
+  ```
+
+  You should get an output similair to screenshot below showing the SLAM process:
+  ![hslam-output-screenshot](https://github.com/8bit-nyk/HSLAM/assets/49674476/ab3a1c94-8f38-41da-855d-c25566f720c4)
 
 
 
