@@ -25,125 +25,73 @@ HSLAM is released under [GPLv3 license]
 
 # 2. Prerequisites
 We have tested the library in **Ubuntu 18.04** and **20.04**, but it should be easy to compile in other platforms. A powerful computer (e.g. i7) will ensure real-time performance and provide more stable and accurate results.
+### Dependencies:
+**[NOTE]: The correct versions will be installed when building project with the provided `build.sh` script. (See Section 4 for more details)**
 
-# 3. Dependencies:
 The project is dependent on specific versions of the following libraries:
-
-**The correct versions will be installed when building project with the provided `build.sh` script. (See Section 4 for more details)**
-
-## C++11 or C++0x Compiler
-We use the new thread and chrono functionalities of C++11.
-
-## Pangolin
-We use [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. Dowload and install instructions can be found at: https://github.com/stevenlovegrove/Pangolin.
-
-## OpenCV
-We use [OpenCV](http://opencv.org) to manipulate images and features. Dowload and install instructions can be found at: http://opencv.org. **Required at least 3.4.6**.
-
-## Eigen3
-Required by g2o (see below). Download and install instructions can be found at: http://eigen.tuxfamily.org. **Required at least 3.1.0**.
-
-## DBoW2 and g2o (Included in Thirdparty folder)
-We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) library to perform place recognition and [g2o](https://github.com/RainerKuemmerle/g2o) library to perform non-linear optimizations. Both modified libraries (which are BSD) are included in the *Thirdparty* folder.
+- C++11 or C++0x Compiler: We use the new thread and chrono functionalities of C++11.
+- [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. (Included in Thirdparty folder)
+- OpenCV 3.4.6 (Included in Thirdparty folder)
+- DBoW2 and g2o (Included in Thirdparty folder)
 
 
-# 4. Building HSLAM library and dependencies
+
+
+
+# 3. Building HSLAM library and dependencies
 
 1. Clone the repository:
 ```
-$ git clone https://github.com/8bit-nyk/HSLAM.git
+git clone https://github.com/8bit-nyk/HSLAM.git
 ```
 Note: We are cloning a specific branch with **-b** argument
 
-2. Navigate to project repository:
+2. Navigate to the project directory:
 ```
-$ cd <your_working_directory>/HSLAM
+cd <your_working_directory>/HSLAM
 ```
 
-3. We provide a script `build.sh` to download and install the specific versions of the dependency libraries needed. Execute:
+Before building the main project we need to build the thirdparty dependancies
 
+
+3. Navigate to the Thirdparty directory:
 ```
-$ chmod +x build.sh
-$ ./build.sh
+cd Thirdparty
 ```
-After the script finishes we will have to modify and build some thirdparty libraries.
+4. We provide a script `build.sh` to download and install the  specific versions of the dependency libraries needed. Execute:
 
-4. Building and configuring third party libraries:
-    Open terminal in project directory and navigate to g2o folder located in Thirdparty directory:
-    ```
-    ~/HSLAM$ cd /Thirdparty/g2o
-    ```
-    Create build directory and navigate to it:
-    ```
-    ~/Thirdparty/g2o$ mkdir build && cd build
-    ```
-    Configure CMake flags:
-    ```
-    ~/Thirdparty/g2o/build$ ccmake ..
-    ```
-    This will open the CMake GUI in the terminal as per the screenshot below:
-    ![hslam-cmake-tutorial](https://github.com/8bit-nyk/HSLAM/assets/49674476/7833e0cf-baf9-4640-96a2-3f02dc7474e5)
+  ```
+  chmod +x build.sh && ./build.sh
+  ```
 
+5. Configuring and building main project:
+
+    In terminal navigate back to HSLAM main project directory
+    ```
+    cd ..
+    or
+    cd ~/<your_directory>/HSLAM
+    ```
     
-    Press [c] to configure and [t] to toggle advanced mode ON.
-
-    Once in advanced mode:
-        Locate the five parameters with **CMAKE_CXX_FLAGS** and _**APPEND**_ the following string to all **CMAKE_CXX_FLAGS** parameters:
-        
-        -march=native -std=gnu++0x
-    
-
-    Set the following flags as indicated below:
-     ```
-    - BUILD_WITH_MARCH_NATIVE=ON
-    - CMAKE_BUILD_TYPE : RelwithDebInfo
-    - CMAKE_INSTALL_PREFIX: <your_directory>/HSLAM/Thirdparty/CompiledLibs
-    - CMAKE_RELWITHDEBINFO_POSTFIX : ""
-    - CMAKE_MINSIZEREL_POSTFIX : ""
-    - G2O_BUILD_APPS : OFF
-    - G2O_BUILD_EXAMPLES : OFF
-    - G2O_USE_OPENMP : OFF
+    Run the following command to create the build directory
     ```
-    Press [c] again to configure then press [g] to generate.
-
-    In the terminal run the following commands:
+    mkdir -p build 
     ```
-    ~/../Thirdparty/g2o/build$ make -j4
-    ~/../Thirdparty/g2o/build$ make install
+    Navigate into the create build directory:
     ```
-We need to re-build the main project.
-
-5. Configuring and re-building main project:
-
-    In terminal navigate to HSLAM main project diirectory
+    cd build 
     ```
-    $ cd ~/<your_directory>/HSLAM
+    Configure cmake:
     ```
-    Run the following command
-    ```
-    ~/../HSLAM$ ccmake .
-    ```
-    This will open the CMake GUI.
-
-    Press [c] to configure and [t] to toggle advanced mode ON.
-
-    Once in advanced mode:
-        Locate the five parameters with **CMAKE_CXX_FLAGS** and **append** the following string to all parameters:
-        
-        -march=native -std=gnu++0x
-
-    Set the build type flag
+    cmake .. -DCMAKE_BUILD_TYPE=RelwithDebInfo 
     ``` 
-    CMAKE_BUILD_TYPE : RelwithDebInfo
+    Build the Project:
     ```
-    Press [c] again to configure then press [g] to generate.
-    In the terminal run the following commands:
-    ```
-    ~/../HSLAM$ make -j4
+    make -j $(nproc)
     ```
 
-# 5. Run Examples
-1. Download one of the sequences from the [Monocular Visual ODometry Dataset provided by TUM](https://cvg.cit.tum.de/data/datasets/mono-dataset)
+# 4. Run Examples
+1. Download one of the sequences from the [Monocular Visual Odometry Dataset provided by TUM](https://cvg.cit.tum.de/data/datasets/mono-dataset)
 
 
 2. Navigate to the build directory of the project
