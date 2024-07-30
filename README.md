@@ -1,7 +1,8 @@
 # HSLAM (Hybrid-SLAM)
 
-This branch holds clear instructions on how to resolve all dependency issues and build & run Hybrid-SLAM on datasets.
-For an implementation of HSLAM with live camera feed (utilizing ROS) refer to this repository [HSLAM_Docker](https://github.com/8bit-nyk/hslam_ros_docker) .
+This project builds and runs monocular Visual SLAM system which integrates a hybrid approach utilizing both direct and indirect methods.
+This project mainly runs on datasets.
+For an implementation of HSLAM with live camera feed (utilizing ROS) and even easier setup usign docker refer to this repository [HSLAM_Docker](https://github.com/8bit-nyk/hslam_ros_docker) .
 
 ### Related Publications:
 [A Unified Hybrid Formulation for Visual SLAM](https://scholarworks.aub.edu.lb/bitstream/handle/10938/22253/YounesGeorges_2021.pdf?sequence=5) (Doctoral dissertation), Younes, G. (2021).
@@ -33,8 +34,6 @@ The project is dependent on specific versions of the following libraries:
 - [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. (Included in Thirdparty folder)
 - OpenCV 3.4.6 (Included in Thirdparty folder)
 - DBoW2 and g2o (Included in Thirdparty folder)
-
-
 
 
 
