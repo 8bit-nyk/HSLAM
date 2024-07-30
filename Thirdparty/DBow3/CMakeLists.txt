@@ -50,6 +50,7 @@ OPTION(BUILD_SHARED_LIBS 	"Set to OFF to build static libraries" ON)
 # ----------------------------------------------------------------------------
 #   Find Dependencies
 # ----------------------------------------------------------------------------
+##
 find_package(OpenCV  REQUIRED)
 IF(USE_CONTRIB)
 add_definitions(-DUSE_CONTRIB)

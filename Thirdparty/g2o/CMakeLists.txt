@@ -18,6 +18,14 @@ if(NOT CMAKE_BUILD_TYPE)
       FORCE)
 endif(NOT CMAKE_BUILD_TYPE)
 
+message ("CMAKE install prefix: ${CMAKE_INSTALL_PREFIX}")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -std=gnu++0x")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -march=native -std=gnu++0x")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -march=native -std=gnu++0x")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native -std=gnu++0x")
+set (CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -march=native -std=gnu++0x")
+
 # postfix, based on type
 set(CMAKE_DEBUG_POSTFIX "_d" CACHE STRING "postfix applied to debug build of libraries")
 set(CMAKE_RELEASE_POSTFIX "" CACHE STRING "postfix applied to release build of libraries")
@@ -74,6 +82,12 @@ set(LIBRARY_DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 set(ARCHIVE_DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 set(INCLUDES_DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 set(INCLUDES_INSTALL_DIR ${INCLUDES_DESTINATION}/g2o)
+
+#Debug installation destionations:
+message("RUNTIME DESTINATION : ${RUNTIME_DESTINATION}")
+message("LIBRARY DESTINATION : ${LIBRARY_DESTINATION}")
+message("INCLUDES DESTINATION : ${INCLUDES_DESTINATION}")
+message("INCLUDES INSTALL DIRECTORY : ${INCLUDES_INSTALL_DIR}")
 
 # Set search directory for looking for our custom CMake scripts to
 # look for SuiteSparse, QGLViewer, and Eigen3.
