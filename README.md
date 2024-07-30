@@ -9,7 +9,7 @@ For an implementation of HSLAM with live camera feed (utilizing ROS) and and out
 ### Related Publications:
 [A Unified Hybrid Formulation for Visual SLAM](https://scholarworks.aub.edu.lb/bitstream/handle/10938/22253/YounesGeorges_2021.pdf?sequence=5) (Doctoral dissertation), Younes, G. (2021).
 
-[H-SLAM: Hybrid Direct-Indirect Visual SLAM](https://arxiv.org/pdf/2306.07363)  Younes, G. et al (2023).
+[H-SLAM: Hybrid Direct-Indirect Visual SLAM](https://doi.org/10.1016/j.robot.2024.104729)  Younes, G. et al (2024).
 
 Please cite the paper if used in an academic context.
 ```
