@@ -13,11 +13,13 @@ For an implementation of HSLAM with live camera feed (utilizing ROS) and and out
 
 Please cite the paper if used in an academic context.
 ```
-@article{younes2023h,
-  title={H-SLAM: Hybrid Direct-Indirect Visual SLAM},
+@article{younes2024h,
+  title={H-SLAM: Hybrid direct-indirect visual SLAM},
   author={Younes, Georges and Khalil, Douaa and Zelek, John and Asmar, Daniel},
-  journal={arXiv preprint arXiv:2306.07363},
-  year={2023}
+  journal={Robotics and Autonomous Systems},
+  pages={104729},
+  year={2024},
+  publisher={Elsevier}
 }
 
 ```
