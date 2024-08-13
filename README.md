@@ -47,8 +47,6 @@ The project is dependent on specific versions of the following libraries:
 ```
 git clone https://github.com/8bit-nyk/HSLAM.git
 ```
-Note: We are cloning a specific branch with **-b** argument
-
 2. Navigate to the project directory:
 ```
 cd <your_working_directory>/HSLAM
