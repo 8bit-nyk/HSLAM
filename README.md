@@ -1,5 +1,5 @@
 # HSLAM (Hybrid-SLAM)
-
+### This is an outdated version of the HSLAM project, for the most recent development repository please refer to [HSLAM Dev](https://github.com/8bit-nyk/hslam_ros2)
 This project builds and runs monocular Visual SLAM system which integrates a hybrid approach utilizing both direct and indirect methods.
 
 This project mainly runs on datasets.
