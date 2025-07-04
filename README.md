@@ -4,7 +4,7 @@ This project builds and runs monocular Visual SLAM system which integrates a hyb
 
 This project mainly runs on datasets.
 
-For an implementation of HSLAM with live camera feed (utilizing ROS) and and out-of-the-box SLAM system leveraging docker refer to this repository [HSLAM_Docker](https://github.com/8bit-nyk/hslam_ros_docker) .
+For an implementation of HSLAM with live camera feed ([ROS1 Wrapper for HSLAM](https://github.com/8bit-nyk/hslam_ros)  ) and an out-of-the-box SLAM system leveraging docker refer to this repository [HSLAM_Docker](https://github.com/8bit-nyk/hslam_ros_docker) .
 
 ### Related Publications:
 
